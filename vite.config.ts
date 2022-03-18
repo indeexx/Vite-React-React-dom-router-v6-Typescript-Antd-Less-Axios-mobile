@@ -11,13 +11,9 @@ export default defineConfig({
     }
   },
   plugins: [
-    react({
-      babel: {
-        plugins: [
-          ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }],
-        ]
-      },
-    }),
+    process.env.MODE !== 'production' ? react({
+      jsxRuntime: 'classic',
+    }) : react(),
     vitePluginImp(
       {
         optimize: true,
