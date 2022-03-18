@@ -11,7 +11,13 @@ export default defineConfig({
     }
   },
   plugins: [
-    react(),
+    react({
+      babel: {
+        plugins: [
+          ['@babel/plugin-transform-react-jsx', { runtime: 'automatic' }],
+        ]
+      },
+    }),
     vitePluginImp(
       {
         optimize: true,
