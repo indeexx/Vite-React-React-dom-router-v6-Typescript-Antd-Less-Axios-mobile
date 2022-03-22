@@ -1,6 +1,7 @@
-import Home from "./../pages/Home"
-import About from "./../pages/About"
-import NotFound from "./../pages/NotFound"
+import { lazy } from "react"
+const Home = lazy(() => import('./../pages/Home'));
+const NotFound = lazy(() => import('./../pages/NotFound'));
+const About = lazy(() => import('./../pages/About'));
 
 const Routes: any = [
     {
